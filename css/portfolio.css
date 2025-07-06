@@ -1,0 +1,149 @@
+/* Portfolio Styles */
+.portfolio{
+    background-image: url('../photos/camer.jpg');
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: cover; 
+    background-attachment: fixed;
+
+}
+
+.portfolio-intro {
+    padding-top: 8rem;
+}
+
+.portfolio-subtitle {
+    font-size: 1.25rem;
+    color: var(--gray-250);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--white);
+    border-radius: 8px;
+    color: var(--white);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--white);
+    color: var(--primary);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    height:auto;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.2);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+    color: var(--white);
+}
+
+.gallery-overlay p {
+    font-size: 0.875rem;
+    color: var(--gray-300);
+}
+/* Scroll-down arrow styles (identical to home.css) */
+.scroll-down {
+    position: absolute;
+    left: 85%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.scroll-down-link {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    animation: bounce 2s infinite;
+    text-decoration: none;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Positioning for the scroll-down arrows */
+.portfolio-intro {
+    position: relative;
+    padding-bottom: 4rem;
+}
+
+.portfolio-gallery {
+    position: relative;
+    padding-bottom: 4rem;
+}
